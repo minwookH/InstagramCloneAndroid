@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu_home"
+        android:id="@id/feedFragment"
         android:icon="@drawable/ic_launcher_background"
         android:title="홈" />
 
@@ -15,7 +15,7 @@
         android:title="글작성" />-->
 
     <item
-        android:id="@+id/menu_like"
+        android:id="@id/likeFragment"
         android:icon="@drawable/ic_launcher_background"
         android:title="좋아요" />
 

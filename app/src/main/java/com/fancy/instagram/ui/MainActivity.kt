@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        NavigationUI.setupWithNavController(bnv_main, findNavController(R.id.nav_host))
+        NavigationUI.setupWithNavController(bnv_main, findNavController(R.id.nav_host_main))
 
         //ClickableSpan
     }
