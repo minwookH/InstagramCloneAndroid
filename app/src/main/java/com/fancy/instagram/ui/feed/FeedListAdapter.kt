@@ -28,7 +28,7 @@ class FeedListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
                 Glide
                     .with(context)
-                    .load(feed.feedImage)
+                    .load(feed.feedContents[0].url)
                     .centerCrop()
                     .into(iv_feed_image)
 
@@ -36,7 +36,7 @@ class FeedListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
                 tv_feed_recive_like.text = feed.likeCount.toString()
 
-                tv_feed_contents.text = feed.contents
+                tv_feed_contents.text = feed.feedText
                 //.placeholder("https://pbs.twimg.com/profile_images/549171896013438979/rqtU6Cvn_400x400.png")
 
                 //iv_feed_profile

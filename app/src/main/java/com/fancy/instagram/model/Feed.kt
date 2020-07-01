@@ -5,8 +5,15 @@ data class Feed(
     val userId: Int,
     val userName: String,
     val userProfileImage: String,
-    val feedImage: String,
-    val contents: String,
+    val feedContents: ArrayList<FeedContentsData>,
+    val feedText: String,
     val likeCount: Int,
+    val isLike: Boolean,
+    val isScrap: Boolean,
     val date: String
+)
+
+data class FeedContentsData(
+    val url: String,
+    val type: String
 )
