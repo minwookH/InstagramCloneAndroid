@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestBuilder
 import com.bumptech.glide.request.RequestOptions
 import com.fancy.instagram.R
+import com.fancy.instagram.databinding.ItemFeedBinding
 import com.fancy.instagram.model.Feed
 import kotlinx.android.synthetic.main.item_feed.view.*
 
@@ -16,27 +17,32 @@ class FeedListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     val feedList: ArrayList<Feed> = arrayListOf()
 
-    inner class FeedViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun onBind(feed: Feed) {
+    inner class FeedViewHolder(val binding: ItemFeedBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun onBind(data: Feed) {
+            binding.apply {
+                feed = data
+                executePendingBindings()
+            }
+
             with(itemView) {
                 Glide
                     .with(context)
-                    .load(feed.userProfileImage)
+                    .load(data.userProfileImage)
                     .centerCrop()
                     .apply(RequestOptions.circleCropTransform())
                     .into(iv_feed_profile)
 
                 Glide
                     .with(context)
-                    .load(feed.feedContents[0].url)
+                    .load(data.feedContents[0].url)
                     .centerCrop()
                     .into(iv_feed_image)
 
-                tv_feed_user_name.text = feed.userName
+                //tv_feed_user_name.text = feed.userName
 
-                tv_feed_recive_like.text = feed.likeCount.toString()
+                //tv_feed_recive_like.text = feed.likeCount.toString()
 
-                tv_feed_contents.text = feed.feedText
+                //tv_feed_contents.text = feed.feedText
                 //.placeholder("https://pbs.twimg.com/profile_images/549171896013438979/rqtU6Cvn_400x400.png")
 
                 //iv_feed_profile
@@ -59,8 +65,8 @@ class FeedListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_feed, parent, false)
-        return FeedViewHolder(view)
+        //val view = LayoutInflater.from(parent.context).inflate(R.layout.item_feed, parent, false)
+        return FeedViewHolder(ItemFeedBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun getItemCount(): Int {

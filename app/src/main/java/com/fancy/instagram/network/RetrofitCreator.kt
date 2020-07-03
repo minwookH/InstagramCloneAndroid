@@ -13,7 +13,7 @@ open class RetrofitCreator {
 
         private fun instagramRetrofit(): Retrofit {
             return Retrofit.Builder()
-                .baseUrl("")
+                .baseUrl("http://192.168.2.5:7001/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(createOkHttpClient())
@@ -38,7 +38,7 @@ open class RetrofitCreator {
                     val requestBuilder = original.newBuilder()
                         .header(
                             "Authorization",
-                            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InRlc3QiLCJpYXQiOjE1OTM1MDYyODcsImV4cCI6MTU5MzU5MjY4N30.5z9f7UKvJEsHR1dY2bvQv8p9Nydf_zefPWgpSqsDGWM"
+                            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InRlc3QiLCJpYXQiOjE1OTM1MDYyODcsImV4cCI6MTU5MzU5MjY4N30.5z9f7UKvJEsHR1dY2bvQv8p9Nydf_zefPWgpSqsDGWM"
                         ) // <-- this is the important line
                     val request = requestBuilder.build()
                     chain.proceed(request)

@@ -14,7 +14,7 @@ class InstagramRouter : RetrofitCreator() {
     }
 
     interface InstagramAPI {
-        @GET("api/post")
+        @GET("api/feed")
         fun getFeedList(): Flowable<FeedResponse>
     }
 }

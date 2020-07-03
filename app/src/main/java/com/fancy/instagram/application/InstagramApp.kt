@@ -1,6 +1,5 @@
 package com.fancy.instagram.application
 
-import android.app.Application
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
@@ -10,8 +9,9 @@ import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
+import androidx.multidex.MultiDexApplication
 
-class InstagramApp: Application() {
+class InstagramApp : MultiDexApplication() {
     companion object {
         lateinit var appContext: InstagramApp
         var runningActivitys: Int = 0
@@ -42,7 +42,8 @@ class InstagramApp: Application() {
 
         fun isEnabledNetwork(): Boolean {
             return try {
-                val cm = appContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+                val cm =
+                    appContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
                 val activeNetwork = cm.activeNetworkInfo
                 activeNetwork.isConnected
             } catch (e: Exception) {
@@ -53,7 +54,6 @@ class InstagramApp: Application() {
 
     override fun onCreate() {
         super.onCreate()
-
         appContext = this
     }
 }

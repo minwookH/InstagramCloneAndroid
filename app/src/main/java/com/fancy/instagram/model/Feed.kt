@@ -2,7 +2,7 @@ package com.fancy.instagram.model
 
 data class Feed(
     val feedId: Int,
-    val userId: Int,
+    val userId: String,
     val userName: String,
     val userProfileImage: String,
     val feedContents: ArrayList<FeedContentsData>,
