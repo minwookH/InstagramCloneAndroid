@@ -23,7 +23,7 @@
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_margin="12dp"
-            android:background="@android:color/darker_gray"
+            android:src="@drawable/outline_account_circle_black_48"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/tv_feed_user_name"
@@ -45,7 +45,7 @@
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_margin="12dp"
-            android:background="@android:color/darker_gray"
+            android:src="@drawable/outline_more_vert_black_48"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,7 +64,7 @@
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_margin="12dp"
-            android:background="@android:color/darker_gray"
+            android:src="@drawable/ic_likes_border"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_feed_image" />
 
@@ -73,7 +73,7 @@
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_margin="12dp"
-            android:background="@android:color/darker_gray"
+            android:src="@drawable/outline_mode_comment_black_48"
             app:layout_constraintLeft_toRightOf="@+id/iv_feed_like"
             app:layout_constraintTop_toBottomOf="@+id/iv_feed_image" />
 
@@ -82,7 +82,7 @@
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_margin="12dp"
-            android:background="@android:color/darker_gray"
+            android:src="@drawable/outline_share_black_48"
             app:layout_constraintLeft_toRightOf="@+id/iv_feed_reply"
             app:layout_constraintTop_toBottomOf="@+id/iv_feed_image" />
 
@@ -91,7 +91,7 @@
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_margin="12dp"
-            android:background="@android:color/darker_gray"
+            android:src="@drawable/baseline_bookmark_border_black_48"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_feed_image" />
 
@@ -110,7 +110,7 @@
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_margin="12dp"
-            android:background="@android:color/darker_gray"
+            android:src="@drawable/ic_likes_active"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/v_feed_divider" />
 
