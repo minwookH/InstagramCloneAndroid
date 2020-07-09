@@ -103,6 +103,7 @@ class FeedFragment : Fragment() {
         val list = arrayListOf(feed1, feed2, feed3)
 
         feedAdapter = FeedListAdapter()
+        // offline teset
         //feedAdapter.setList(list)
         rv_feed_list.adapter = feedAdapter
         rv_feed_list.layoutManager = LinearLayoutManager(requireActivity())
