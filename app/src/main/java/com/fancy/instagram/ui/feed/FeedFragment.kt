@@ -104,7 +104,7 @@ class FeedFragment : Fragment() {
 
         feedAdapter = FeedListAdapter()
         // offline teset
-        //feedAdapter.setList(list)
+        feedAdapter.setList(list)
         rv_feed_list.adapter = feedAdapter
         rv_feed_list.layoutManager = LinearLayoutManager(requireActivity())
         rv_feed_list.addItemDecoration(
@@ -116,6 +116,6 @@ class FeedFragment : Fragment() {
 
         feedViewModel = VMProviders.of(fragment = this).get(FeedViewModel::class.java)
         feedViewModel.feedListData.observe(viewLifecycleOwner, feedListObserve)
-        feedViewModel.getFeedList()
+        //feedViewModel.getFeedList()
     }
 }

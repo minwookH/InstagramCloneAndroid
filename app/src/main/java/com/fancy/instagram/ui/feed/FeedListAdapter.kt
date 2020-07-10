@@ -1,5 +1,6 @@
 package com.fancy.instagram.ui.feed
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -7,6 +8,8 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.fancy.instagram.R
+import com.fancy.instagram.application.InstagramApp
 import com.fancy.instagram.databinding.ItemFeedBinding
 import com.fancy.instagram.model.Feed
 import com.fancy.instagram.model.FeedContentsData
@@ -15,18 +18,35 @@ class FeedListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     val feedList: ArrayList<Feed> = arrayListOf()
 
-    inner class FeedViewHolder(val binding: ItemFeedBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    inner class FeedViewHolder(val binding: ItemFeedBinding) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: Feed) {
             binding.apply {
                 feed = data
+                viewHolder = this@FeedViewHolder
                 executePendingBindings()
+            }
+        }
+
+        fun onFeedLike(id: Int, isLike: Boolean) {
+            Log.d("test", "onFeedLike isLike : $id, isLike : $isLike")
+            if (isLike) {
+                binding.ivFeedLike.setImageDrawable(InstagramApp.drawable(R.drawable.ic_likes_border))
+            } else {
+                binding.ivFeedLike.setImageDrawable(InstagramApp.drawable(R.drawable.ic_likes_active))
+            }
+        }
+
+        fun onFeedScrap(id: Int, isScrap: Boolean) {
+            Log.d("test", "onFeedLike onFeedScrap : $id, isLike : $isScrap")
+            if (isScrap) {
+                binding.ivFeedLike.setImageDrawable(InstagramApp.drawable(R.drawable.baseline_bookmark_border_black_48))
+            } else {
+                binding.ivFeedLike.setImageDrawable(InstagramApp.drawable(R.drawable.baseline_bookmark_black_48))
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        //val view = LayoutInflater.from(parent.context).inflate(R.layout.item_feed, parent, false)
         return FeedViewHolder(
             ItemFeedBinding.inflate(
                 LayoutInflater.from(parent.context),
