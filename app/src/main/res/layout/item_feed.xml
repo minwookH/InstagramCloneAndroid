@@ -32,7 +32,7 @@
             app:layout_constraintRight_toLeftOf="@+id/tv_feed_user_name"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="spread"
-            app:bindProfileImage="@{feed.userProfileImage}"/>
+            app:bind_profile_image="@{feed.userProfileImage}"/>
 
         <TextView
             android:id="@+id/tv_feed_user_name"
@@ -62,7 +62,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_feed_profile"
-            app:bindFeedImage="@{feed.feedContents[0]}" />
+            app:bind_feed_image="@{feed.feedContents[0]}" />
 
         <ImageView
             android:id="@+id/iv_feed_like"
@@ -135,6 +135,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
             android:text="@{feed.feedText}"
+            app:bind_feed_user_id="@{feed.userId}"
+            app:bind_feed_user_name="@{feed.userName}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_feed_recive_like"

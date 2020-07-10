@@ -57,7 +57,7 @@ class FeedFragment : Fragment() {
                     "image"
                 )
             ),
-            "Contents11",
+            "Test11 Contents11",
             1,
             false,
             false,
@@ -75,7 +75,7 @@ class FeedFragment : Fragment() {
                     "image"
                 )
             ),
-            "Contents22",
+            "Test22 Contents22",
             2,
             false,
             false,
@@ -93,7 +93,7 @@ class FeedFragment : Fragment() {
                     "image"
                 )
             ),
-            "Contents33",
+            "Test33 Contents33",
             3,
             false,
             false,

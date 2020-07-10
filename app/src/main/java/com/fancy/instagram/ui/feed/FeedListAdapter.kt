@@ -1,9 +1,16 @@
 package com.fancy.instagram.ui.feed
 
+import android.graphics.Color
+import android.text.SpannableString
+import android.text.TextPaint
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -18,7 +25,8 @@ class FeedListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     val feedList: ArrayList<Feed> = arrayListOf()
 
-    inner class FeedViewHolder(val binding: ItemFeedBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class FeedViewHolder(val binding: ItemFeedBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: Feed) {
             binding.apply {
                 feed = data
@@ -70,7 +78,7 @@ class FeedListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 }
 
-@BindingAdapter("bindFeedImage")
+@BindingAdapter("bind_feed_image")
 fun bindFeedImage(view: ImageView, contents: FeedContentsData?) {
     Glide.with(view.context)
         .load(contents?.url)
@@ -78,11 +86,30 @@ fun bindFeedImage(view: ImageView, contents: FeedContentsData?) {
         .into(view)
 }
 
-@BindingAdapter("bindProfileImage")
+@BindingAdapter("bind_profile_image")
 fun bindProfileImage(view: ImageView, url: String?) {
     Glide.with(view.context)
         .load(url)
         .centerCrop()
         .apply(RequestOptions.circleCropTransform())
         .into(view)
+}
+
+@BindingAdapter("bind_feed_user_id", "bind_feed_user_name")
+fun setFeedText(view: TextView, userId: String, userName: String) {
+    val spannableString = SpannableString(view.text)
+    val clickableSpan = object : ClickableSpan() {
+        override fun onClick(widget: View) {
+        }
+
+        override fun updateDrawState(ds: TextPaint) {
+            ds.linkColor = Color.BLACK
+            ds.isUnderlineText = false
+            ds.isFakeBoldText = true
+        }
+    }
+
+    spannableString.setSpan(clickableSpan, 0, userName.length, 0)
+    view.text = spannableString
+    view.movementMethod = LinkMovementMethod.getInstance()
 }
