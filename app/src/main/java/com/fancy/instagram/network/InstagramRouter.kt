@@ -13,8 +13,12 @@ class InstagramRouter : RetrofitCreator() {
         }
     }
 
+    //또는 반환값을 Response<StartupResponse>
     interface InstagramAPI {
         @GET("api/feed")
         fun getFeedList(): Flowable<FeedResponse>
+
+        @GET("api/feed/{id}")
+        fun getFeed(@Path("id") id: Int): Flowable<FeedResponse>
     }
 }
