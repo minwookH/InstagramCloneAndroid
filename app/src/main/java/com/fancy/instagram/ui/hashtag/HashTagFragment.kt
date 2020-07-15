@@ -1,4 +1,4 @@
-package com.fancy.instagram.ui.feed
+package com.fancy.instagram.ui.hashtag
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,12 +17,13 @@ import com.fancy.instagram.base.VMProviders
 import com.fancy.instagram.databinding.FragmentFeedBinding
 import com.fancy.instagram.model.Feed
 import com.fancy.instagram.model.FeedContentsData
+import com.fancy.instagram.ui.feed.FeedViewModel
 import kotlinx.android.synthetic.main.fragment_feed.*
 import org.joda.time.DateTime
 
-class FeedFragment : Fragment() {
+class HashTagFragment : Fragment() {
 
-    lateinit var feedAdapter: FeedListAdapter
+    lateinit var feedAdapter: HashTagListAdapter
     lateinit var feedViewModel: FeedViewModel
     lateinit var feedBinding: FragmentFeedBinding
 
@@ -99,7 +100,7 @@ class FeedFragment : Fragment() {
 
         val list = arrayListOf(feed1, feed2, feed3)
 
-        feedAdapter = FeedListAdapter()
+        feedAdapter = HashTagListAdapter()
         // offline teset
         feedAdapter.setList(list)
         rv_feed_list.adapter = feedAdapter

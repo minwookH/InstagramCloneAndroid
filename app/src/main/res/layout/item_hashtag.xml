@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="hashTagContentsData"
+            type="com.fancy.instagram.model.HashTagContentsData"/>
+        <variable
+            name="viewHolder"
+            type="com.fancy.instagram.ui.hashtag.HashTagListAdapter.HashTagViewHolder"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.MainActivity">
+
+        <ImageView
+            android:id="@+id/iv_hashtag_image"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@android:color/holo_blue_light"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:bind_hashtag_image="@{hashTagContentsData.url[0]}" />
+
+        <ImageView
+            android:id="@+id/iv_hashtag_type"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_margin="12dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

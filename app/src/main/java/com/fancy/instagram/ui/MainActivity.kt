@@ -1,14 +1,13 @@
 package com.fancy.instagram.ui
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.fancy.instagram.R
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(bnv_main, findNavController(R.id.nav_host_main))
 
         //ClickableSpan
+
+        //nav_host_main
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
