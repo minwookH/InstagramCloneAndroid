@@ -22,33 +22,11 @@ class HashTagListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 executePendingBindings()
             }
         }
-
-        /*fun onFeedLike(id: Int, isLike: Boolean) {
-            Log.d("test", "onFeedLike isLike : $id, isLike : $isLike")
-            if (isLike) {
-                binding.ivFeedLike.setImageDrawable(InstagramApp.drawable(R.drawable.ic_likes_border))
-            } else {
-                binding.ivFeedLike.setImageDrawable(InstagramApp.drawable(R.drawable.ic_likes_active))
-            }
-        }
-
-        fun onFeedScrap(id: Int, isScrap: Boolean) {
-            Log.d("test", "onFeedLike onFeedScrap : $id, isLike : $isScrap")
-            if (isScrap) {
-                binding.ivFeedLike.setImageDrawable(InstagramApp.drawable(R.drawable.baseline_bookmark_border_black_48))
-            } else {
-                binding.ivFeedLike.setImageDrawable(InstagramApp.drawable(R.drawable.baseline_bookmark_black_48))
-            }
-        }*/
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return HashTagViewHolder(
-            ItemHashtagBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
+            ItemHashtagBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 

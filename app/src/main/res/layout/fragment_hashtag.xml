@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="hashtag"
+            type="com.fancy.instagram.model.HashTag"/>
+        <variable
+            name="viewHolder"
+            type="com.fancy.instagram.ui.hashtag.HashTagListAdapter.HashTagViewHolder"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_hashtag_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_hashtag_first_image"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_margin="24dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/tb_hashtag_toolbar"
+            app:layout_constraintStart_toStartOf="@+id/tb_hashtag_toolbar"
+            app:layout_constraintBottom_toTopOf="@+id/rv_hashtag_list"
+            app:layout_constraintVertical_chainStyle="spread"/>
+
+        <TextView
+            android:id="@+id/tv_hashtag_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123123"
+            app:layout_constraintTop_toBottomOf="@+id/tb_hashtag_toolbar"
+            app:layout_constraintStart_toEndOf="@+id/iv_hashtag_first_image"
+            app:layout_constraintBottom_toTopOf="@+id/bt_hashtag_follow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_chainStyle="spread"/>
+
+        <Button
+            android:id="@+id/bt_hashtag_follow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123123"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hashtag_count"
+            app:layout_constraintBottom_toTopOf="@+id/tv_hashtag_text"
+            app:layout_constraintStart_toEndOf="@+id/iv_hashtag_first_image"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_hashtag_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123123"
+            app:layout_constraintTop_toBottomOf="@+id/bt_hashtag_follow"
+            app:layout_constraintBottom_toTopOf="@+id/rv_hashtag_list"
+            app:layout_constraintStart_toEndOf="@+id/iv_hashtag_first_image"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_hashtag_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/iv_hashtag_first_image"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

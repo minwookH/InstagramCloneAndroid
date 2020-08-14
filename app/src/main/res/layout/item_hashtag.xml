@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:bind_hashtag_image="@{hashTagContentsData.url[0]}" />
+            app:bind_hashtag_image="@{hashTagContentsData.url}"/>
 
         <ImageView
             android:id="@+id/iv_hashtag_type"
